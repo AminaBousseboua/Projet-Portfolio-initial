@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="À propos d'Amina Bousseboua — Développeuse Web." />
+    <title>À propos — Amina Bousseboua</title>
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+
+  <body class="page-transition">
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" role="banner">
+      <div class="conteneur header__inner">
+        <a href="../index.html" class="header__logo" aria-label="Accueil — Amina Bousseboua">
+          Amina<span>.</span>
+        </a>
+
+        <button
+          class="nav__hamburger"
+          aria-label="Ouvrir le menu de navigation"
+          aria-expanded="false"
+          aria-controls="navigation-principale"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="navigation-principale" aria-label="Navigation principale">
+          <ul class="nav__liste" role="list">
+            <li><a href="../index.html"          class="nav__lien">Accueil</a></li>
+            <li><a href="about.html"             class="nav__lien">À propos</a></li>
+            <li><a href="biographie.html"        class="nav__lien">Biographie</a></li>
+            <li><a href="expertise.html"         class="nav__lien">Expertise</a></li>
+            <li><a href="projets.html"           class="nav__lien">Projets</a></li>
+            <li><a href="contact.html"           class="nav__lien">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main id="contenu-principal">
+
+      <!-- Bannière -->
+      <section class="banniere-page" aria-label="En-tête de la page À propos">
+        <div class="conteneur">
+          <h1>À propos de moi</h1>
+          <p>Qui je suis et ce qui m'anime au quotidien</p>
+        </div>
+      </section>
+
+      <!-- Présentation (Flex layout #1) -->
+      <section class="section" aria-labelledby="titre-presentation">
+        <div class="conteneur">
+          <div class="flex-about">
+
+            <div class="flex-about__image">
+              <img
+                src="../assets/images/profil.jpg"
+                alt="Photo de profil d'Amina Bousseboua"
+                width="320"
+                height="380"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="flex-about__texte">
+              <h2 id="titre-presentation">Bonjour, je suis Amina&nbsp;!</h2>
+              <p class="helvetica">
+                Passionné par le web depuis mes premières lignes de code,
+                je suis actuellement étudiante en <strong class="em-gras">développement
+                d'applications Web</strong> et je me spécialise dans la création
+                d'interfaces modernes et inclusives.
+              </p>
+              <p class="helvetica">
+                Au-delà du code, j'aime résoudre des problèmes complexes,
+                <em class="em-italic">apprendre de nouvelles technologies</em> et
+                contribuer à des projets qui ont un impact concret sur les utilisateurs.
+              </p>
+              <p class="helvetica">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                vehicula condimentum nunc, non facilisis massa. Integer mollis
+                feugiat neque a consequat.
+              </p>
+
+              <div style="margin-top: var(--espacement-md); display: flex; gap: var(--espacement-sm); flex-wrap: wrap;">
+                <a href="../assets/images/cv.pdf" class="btn btn-primaire" target="_blank" rel="noopener">
+                  📄 Télécharger mon CV
+                </a>
+                <a href="https://linkedin.com/in/aminabousseboua" class="btn btn-secondaire" target="_blank" rel="noopener noreferrer">
+                  💼 LinkedIn
+                </a>
+                <a href="https://github.com/AminaBousseboua" class="btn btn-secondaire" target="_blank" rel="noopener noreferrer">
+                  🐙 GitHub
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Passions -->
+      <section class="section section-fond-clair" aria-labelledby="titre-passions">
+        <div class="conteneur">
+          <h2 id="titre-passions" class="section-titre">Ce qui me passionne</h2>
+          <div class="grille-3">
+
+            <article class="competence-card">
+              <span class="competence-card__icone" aria-hidden="true">💻</span>
+              <h3 class="competence-card__titre">Développement web</h3>
+              <p class="competence-card__desc">
+                Créer des expériences numériques esthétiques et fonctionnelles,
+                de la maquette au déploiement.
+              </p>
+            </article>
+
+            <article class="competence-card">
+              <span class="competence-card__icone" aria-hidden="true">📚</span>
+              <h3 class="competence-card__titre">Apprentissage continu</h3>
+              <p class="competence-card__desc">
+                Veille technologique quotidienne, MOOC, documentation — j'aime
+                rester à jour dans un domaine en constante évolution.
+              </p>
+            </article>
+
+            <article class="competence-card">
+              <span class="competence-card__icone" aria-hidden="true">🎮</span>
+              <h3 class="competence-card__titre">Jeux vidéo & Design</h3>
+              <p class="competence-card__desc">
+                Passionné par le game design et l'UX, j'analyse les interfaces
+                interactives pour m'en inspirer dans mes projets.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" role="contentinfo">
+      <div class="conteneur footer__inner">
+        <p class="footer__texte">© 2025 Amina Bousseboua — Tous droits réservés.</p>
+        <nav aria-label="Liens sociaux et ressources">
+          <ul class="footer__liens" role="list">
+            <li><a href="#" class="footer__lien">LinkedIn</a></li>
+            <li><a href="#" class="footer__lien">GitHub</a></li>
+            <li><a href="../assets/images/cv.pdf" class="footer__lien">CV</a></li>
+            <li><a href="contact.html" class="footer__lien">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/animations.js"></script>
+  </body>
+</html>
