@@ -1,0 +1,262 @@
+/* =============================================
+   main.css — Variables & Styles globaux
+   Portfolio Alex Dupont
+   ============================================= */
+
+/* ---- Variables CSS ---- */
+:root {
+  --couleur-principale: #2c3e50;
+  --couleur-accent: #3498db;
+  --couleur-fond: #ecf0f1;
+  --couleur-fond-alt: #ffffff;
+  --couleur-footer: #1a252f;
+  --couleur-texte: #2d2d2d;
+  --couleur-texte-clair: #666666;
+  --couleur-succes: #27ae60;
+
+  --police-principale: Helvetica, Arial, sans-serif;
+  --police-titres: Georgia, "Times New Roman", serif;
+
+  --espacement-xs: 0.5rem;
+  --espacement-sm: 1rem;
+  --espacement-md: 2rem;
+  --espacement-lg: 4rem;
+
+  --ombre-legere: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --ombre-card: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --ombre-hover: 0 8px 30px rgba(0, 0, 0, 0.18);
+
+  --rayon-bordure: 8px;
+  --rayon-bordure-lg: 16px;
+
+  --transition-rapide: 0.2s ease;
+  --transition-normale: 0.35s ease;
+
+  --largeur-max: 1200px;
+  --hauteur-header: 70px;
+}
+
+/* ---- Reset & Base ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--police-principale);
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond-alt);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* ---- Typographie ---- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--police-titres);
+  color: var(--couleur-principale);
+  line-height: 1.3;
+  margin-bottom: var(--espacement-sm);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+p {
+  margin-bottom: var(--espacement-sm);
+  color: var(--couleur-texte);
+  min-height: 0; /* respect espacement texte ≥ 5px via line-height */
+}
+
+a {
+  color: var(--couleur-accent);
+  text-decoration: none;
+  transition: color var(--transition-rapide);
+}
+
+a:hover {
+  color: var(--couleur-principale);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---- Helvetica text block (exigence du mandat) ---- */
+.helvetica {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* ---- Emphases ---- */
+.em-gras   { font-weight: 700; }
+.em-italic { font-style: italic; }
+.em-surli  { background-color: #fff3cd; padding: 0 3px; border-radius: 3px; }
+
+/* ---- Bouton principal ---- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--rayon-bordure);
+  font-family: var(--police-principale);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform var(--transition-rapide),
+              box-shadow var(--transition-rapide),
+              background-color var(--transition-rapide);
+  text-decoration: none;
+}
+
+.btn-primaire {
+  background-color: var(--couleur-accent);
+  color: #ffffff;
+}
+
+.btn-primaire:hover {
+  background-color: #2980b9;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: var(--ombre-hover);
+}
+
+.btn-secondaire {
+  background-color: transparent;
+  color: var(--couleur-accent);
+  border: 2px solid var(--couleur-accent);
+}
+
+.btn-secondaire:hover {
+  background-color: var(--couleur-accent);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: var(--ombre-hover);
+}
+
+.btn-outline-blanc {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-outline-blanc:hover {
+  background-color: #ffffff;
+  color: var(--couleur-principale);
+  transform: scale(1.05);
+  box-shadow: var(--ombre-hover);
+}
+
+/* ---- Container ---- */
+.conteneur {
+  max-width: var(--largeur-max);
+  margin: 0 auto;
+  padding: 0 var(--espacement-md);
+}
+
+/* ---- Section standard ---- */
+.section {
+  padding: var(--espacement-lg) 0;
+}
+
+.section-titre {
+  text-align: center;
+  margin-bottom: var(--espacement-md);
+  position: relative;
+}
+
+.section-titre::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--couleur-accent);
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+.section-fond-clair {
+  background-color: var(--couleur-fond);
+}
+
+/* ---- Bannière de page ---- */
+.banniere-page {
+  background: linear-gradient(135deg, var(--couleur-principale), #34495e);
+  color: #ffffff;
+  padding: 5rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banniere-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/images/pattern.svg") center/cover;
+  opacity: 0.05;
+}
+
+.banniere-page h1 {
+  color: #ffffff;
+  margin-bottom: var(--espacement-xs);
+}
+
+.banniere-page p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* ---- Card générique ---- */
+.card {
+  background-color: var(--couleur-fond-alt);
+  border-radius: var(--rayon-bordure-lg);
+  padding: var(--espacement-md);
+  box-shadow: var(--ombre-card);
+  transition: transform var(--transition-normale),
+              box-shadow var(--transition-normale);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ombre-hover);
+}
+
+/* ---- Tag technologie ---- */
+.tag {
+  display: inline-block;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-principale);
+  border: 1px solid #ccd;
+  border-radius: 20px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 0.2rem;
+  transition: background-color var(--transition-rapide),
+              color var(--transition-rapide);
+}
+
+.tag:hover {
+  background-color: var(--couleur-accent);
+  color: #ffffff;
+  border-color: var(--couleur-accent);
+}

@@ -1,0 +1,166 @@
+/* =============================================
+   responsive.css — Breakpoints logiques
+   Mobile : < 480px
+   Tablet : 481px – 768px
+   Desktop : > 769px  (styles de base)
+   ============================================= */
+
+/* ==========================================
+   TABLET — max-width: 768px
+   ========================================== */
+@media (max-width: 768px) {
+  :root {
+    --espacement-lg: 2.5rem;
+    --espacement-md: 1.5rem;
+  }
+
+  /* Navigation verticale */
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__liste {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: fixed;
+    top: var(--hauteur-header);
+    left: 0;
+    right: 0;
+    background-color: var(--couleur-principale);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normale);
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav__liste.ouverte {
+    max-height: 400px;
+  }
+
+  .nav__lien {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 1rem;
+  }
+
+  .nav__lien::after {
+    display: none;
+  }
+
+  /* Grilles → 2 colonnes */
+  .grille-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Flex about → colonne */
+  .flex-about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .flex-about__image {
+    flex: 0 0 auto;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  /* Footer → colonne */
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Bannière */
+  .banniere-page {
+    padding: 3.5rem 0 3rem;
+  }
+
+  /* Section hero */
+  .hero__contenu h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Table contact */
+  .contact-table-wrapper table {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================
+   MOBILE — max-width: 480px
+   ========================================== */
+@media (max-width: 480px) {
+  :root {
+    --espacement-lg: 2rem;
+    --espacement-md: 1.25rem;
+  }
+
+  /* Grilles → 1 colonne */
+  .grille-3,
+  .grille-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .flex-competences__item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 90vh;
+    padding: 3rem var(--espacement-sm);
+  }
+
+  .hero__contenu h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero__contenu p {
+    font-size: 1rem;
+  }
+
+  /* Bannière de page */
+  .banniere-page {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .banniere-page h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Cards */
+  .card {
+    padding: var(--espacement-sm);
+  }
+
+  /* Boutons côte à côte → colonne */
+  .hero__boutons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Biographie blocs */
+  .bio-bloc {
+    padding: var(--espacement-sm);
+  }
+
+  /* Formulaire contact */
+  .contact-table-wrapper td,
+  .contact-table-wrapper th {
+    display: block;
+    width: 100%;
+  }
+
+  /* Footer liens → colonne */
+  .footer__liens {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
