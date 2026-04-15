@@ -1,0 +1,11 @@
+# --- IDE et Éditeurs ---
+.vscode/           
+.idea/             
+
+# --- Fichiers Système ---
+Thumbs.db          
+desktop.ini        
+
+# --- Fichiers temporaires / Logs ---
+*.log
+npm-debug.log*
