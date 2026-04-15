@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formulaire de contact pour joindre Amina Bousseboua." />
+    <title>Contact — Amina Bousseboua</title>
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+
+  <body class="page-transition">
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" role="banner">
+      <div class="conteneur header__inner">
+        <a href="../index.html" class="header__logo" aria-label="Accueil — Amina Bousseboua">
+          Amina<span>.</span>
+        </a>
+
+        <button
+          class="nav__hamburger"
+          aria-label="Ouvrir le menu de navigation"
+          aria-expanded="false"
+          aria-controls="navigation-principale"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="navigation-principale" aria-label="Navigation principale">
+          <ul class="nav__liste" role="list">
+            <li><a href="../index.html"   class="nav__lien">Accueil</a></li>
+            <li><a href="about.html"      class="nav__lien">À propos</a></li>
+            <li><a href="biographie.html" class="nav__lien">Biographie</a></li>
+            <li><a href="expertise.html"  class="nav__lien">Expertise</a></li>
+            <li><a href="projets.html"    class="nav__lien">Projets</a></li>
+            <li><a href="contact.html"    class="nav__lien">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main id="contenu-principal">
+
+      <!-- Bannière -->
+      <section class="banniere-page" aria-label="En-tête de la page Contact">
+        <div class="conteneur">
+          <h1>Contactez-moi</h1>
+          <p>Un projet, une question ? Je suis à votre écoute.</p>
+        </div>
+      </section>
+
+      <!-- Section contact -->
+      <section class="section" aria-labelledby="titre-contact">
+        <div class="conteneur">
+          <h2 id="titre-contact" class="section-titre">Envoyez-moi un message</h2>
+          <div class="grille-2">
+
+            <!-- Formulaire (positionné avec table > tr > th/td) -->
+            <div>
+              <div class="contact-table-wrapper">
+                <!--
+                  Formulaire fonctionnel :
+                  méthode POST, target _blank,
+                  destination w3schools
+                -->
+                <form
+                  action="https://www.w3schools.com/action_page.php"
+                  method="POST"
+                  target="_blank"
+                  aria-label="Formulaire de contact"
+                  novalidate
+                >
+                  <table role="presentation" aria-hidden="false">
+                    <tbody>
+
+                      <!-- Champ Prénom -->
+                      <tr>
+                        <th scope="row">
+                          <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+                        </th>
+                        <td>
+                          <input
+                            type="text"
+                            id="prenom"
+                            name="prenom"
+                            class="champ-formulaire"
+                            placeholder="Votre prénom"
+                            required
+                            autocomplete="given-name"
+                          />
+                        </td>
+                      </tr>
+
+                      <!-- Champ Nom -->
+                      <tr>
+                        <th scope="row">
+                          <label for="nom">Nom <span aria-hidden="true">*</span></label>
+                        </th>
+                        <td>
+                          <input
+                            type="text"
+                            id="nom"
+                            name="nom"
+                            class="champ-formulaire"
+                            placeholder="Votre nom de famille"
+                            required
+                            autocomplete="family-name"
+                          />
+                        </td>
+                      </tr>
+
+                      <!-- Champ Courriel -->
+                      <tr>
+                        <th scope="row">
+                          <label for="courriel">Courriel <span aria-hidden="true">*</span></label>
+                        </th>
+                        <td>
+                          <input
+                            type="email"
+                            id="courriel"
+                            name="courriel"
+                            class="champ-formulaire"
+                            placeholder="votre@email.com"
+                            required
+                            autocomplete="email"
+                          />
+                        </td>
+                      </tr>
+
+                      <!-- Champ Message -->
+                      <tr>
+                        <th scope="row" style="vertical-align: top; padding-top: 0.85rem;">
+                          <label for="message">Message <span aria-hidden="true">*</span></label>
+                        </th>
+                        <td>
+                          <textarea
+                            id="message"
+                            name="message"
+                            class="champ-formulaire"
+                            placeholder="Décrivez votre projet ou votre question…"
+                            required
+                            rows="5"
+                          ></textarea>
+                        </td>
+                      </tr>
+
+                      <!-- Bouton envoyer -->
+                      <tr>
+                        <td colspan="2" style="padding-top: var(--espacement-sm);">
+                          <button type="submit" class="btn btn-primaire">
+                            ✉️ Envoyer le message
+                          </button>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+
+            <!-- Coordonnées -->
+            <div class="contact-coordonnees">
+              <h3 style="margin-bottom: var(--espacement-sm); color: var(--couleur-principale);">
+                Mes coordonnées
+              </h3>
+
+              <div class="coordonnee-item">
+                <span aria-hidden="true">📧</span>
+                <div>
+                  <strong>Courriel</strong><br />
+                  <a href="mailto:amina.bousseboua@exemple.com">amina.bousseboua@exemple.com</a>
+                </div>
+              </div>
+
+              <div class="coordonnee-item">
+                <span aria-hidden="true">💼</span>
+                <div>
+                  <strong>LinkedIn</strong><br />
+                  <a href="https://linkedin.com/in/aminabousseboua" target="_blank" rel="noopener noreferrer">
+                    linkedin.com/in/aminabousseboua
+                  </a>
+                </div>
+              </div>
+
+              <div class="coordonnee-item">
+                <span aria-hidden="true">🐙</span>
+                <div>
+                  <strong>GitHub</strong><br />
+                  <a href="https://github.com/AminaBousseboua" target="_blank" rel="noopener noreferrer">
+                    github.com/AminaBousseboua
+                  </a>
+                </div>
+              </div>
+
+              <div class="coordonnee-item">
+                <span aria-hidden="true">📄</span>
+                <div>
+                  <strong>CV</strong><br />
+                  <a href="../assets/images/cv.pdf" target="_blank" rel="noopener">
+                    Télécharger mon CV (PDF)
+                  </a>
+                </div>
+              </div>
+
+              <div class="coordonnee-item">
+                <span aria-hidden="true">📍</span>
+                <div>
+                  <strong>Localisation</strong><br />
+                  Montréal, Québec, Canada
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" role="contentinfo">
+      <div class="conteneur footer__inner">
+        <p class="footer__texte">© 2025 Amina Bousseboua — Tous droits réservés.</p>
+        <nav aria-label="Liens sociaux et ressources">
+          <ul class="footer__liens" role="list">
+            <li><a href="#" class="footer__lien">LinkedIn</a></li>
+            <li><a href="#" class="footer__lien">GitHub</a></li>
+            <li><a href="../assets/images/cv.pdf" class="footer__lien">CV</a></li>
+            <li><a href="contact.html" class="footer__lien">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/animations.js"></script>
+  </body>
+</html>

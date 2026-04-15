@@ -1,0 +1,385 @@
+/* =============================================
+   components.css — Composants réutilisables
+   ============================================= */
+
+/* ==========================================
+   HERO — Page d'accueil
+   ========================================== */
+.hero {
+  min-height: calc(100vh - var(--hauteur-header));
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.88), rgba(52, 73, 94, 0.82)),
+              url("../assets/images/hero-bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--espacement-lg) var(--espacement-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--couleur-fond-alt);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+
+.hero__contenu {
+  max-width: 750px;
+  position: relative;
+  z-index: 1;
+  animation: apparaitreHaut 0.9s ease both;
+}
+
+.hero__contenu h1 {
+  color: #ffffff;
+  margin-bottom: var(--espacement-sm);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero__contenu p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.2rem;
+  margin-bottom: var(--espacement-md);
+}
+
+.hero__boutons {
+  display: flex;
+  gap: var(--espacement-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================
+   CARTE DE COMPÉTENCE (accueil)
+   ========================================== */
+.competence-card {
+  text-align: center;
+  padding: var(--espacement-md);
+  background-color: var(--couleur-fond-alt);
+  border-radius: var(--rayon-bordure-lg);
+  box-shadow: var(--ombre-card);
+  transition: transform var(--transition-normale),
+              box-shadow var(--transition-normale);
+}
+
+.competence-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ombre-hover);
+}
+
+.competence-card__icone {
+  font-size: 2.8rem;
+  margin-bottom: var(--espacement-sm);
+  display: block;
+}
+
+.competence-card__titre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--couleur-principale);
+  margin-bottom: var(--espacement-xs);
+}
+
+.competence-card__desc {
+  font-size: 0.9rem;
+  color: var(--couleur-texte-clair);
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   CARTE DE PROJET
+   ========================================== */
+.projet-card {
+  background-color: var(--couleur-fond-alt);
+  border-radius: var(--rayon-bordure-lg);
+  overflow: hidden;
+  box-shadow: var(--ombre-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normale),
+              box-shadow var(--transition-normale);
+}
+
+.projet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ombre-hover);
+}
+
+.projet-card__image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.projet-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normale);
+}
+
+.projet-card:hover .projet-card__image img {
+  transform: scale(1.06);
+}
+
+/* Overlay au survol */
+.projet-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 62, 80, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normale);
+}
+
+.projet-card:hover .projet-card__overlay {
+  opacity: 1;
+}
+
+.projet-card__body {
+  padding: var(--espacement-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-xs);
+}
+
+.projet-card__titre {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--couleur-principale);
+  margin-bottom: var(--espacement-xs);
+}
+
+.projet-card__desc {
+  color: var(--couleur-texte-clair);
+  font-size: 0.9rem;
+  flex: 1;
+  margin-bottom: var(--espacement-xs);
+}
+
+.projet-card__tags {
+  margin-top: auto;
+  margin-bottom: var(--espacement-xs);
+}
+
+.projet-card__lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--couleur-accent);
+  text-decoration: none;
+  transition: gap var(--transition-rapide);
+}
+
+.projet-card__lien:hover {
+  gap: 0.7rem;
+}
+
+/* ==========================================
+   CARTE EXPERTISE
+   ========================================== */
+.expertise-card {
+  background-color: var(--couleur-fond-alt);
+  border-radius: var(--rayon-bordure-lg);
+  padding: var(--espacement-md);
+  box-shadow: var(--ombre-card);
+  border-top: 4px solid var(--couleur-accent);
+  transition: transform var(--transition-normale),
+              box-shadow var(--transition-normale),
+              border-color var(--transition-rapide);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacement-xs);
+}
+
+.expertise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ombre-hover);
+  border-color: var(--couleur-principale);
+}
+
+.expertise-card__icone {
+  font-size: 2.5rem;
+}
+
+.expertise-card__titre {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--couleur-principale);
+}
+
+.expertise-card__desc {
+  color: var(--couleur-texte-clair);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+/* ==========================================
+   BARRES DE PROGRESSION (Expertise)
+   ========================================== */
+.barre-competence {
+  margin-bottom: var(--espacement-sm);
+}
+
+.barre-competence__label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--couleur-principale);
+}
+
+.barre-competence__piste {
+  height: 8px;
+  background-color: #dde3ea;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.barre-competence__remplissage {
+  height: 100%;
+  background: linear-gradient(90deg, var(--couleur-accent), var(--couleur-succes));
+  border-radius: 10px;
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 0; /* animée par JS */
+}
+
+/* ==========================================
+   BLOC BIOGRAPHIE
+   ========================================== */
+.bio-bloc {
+  background-color: var(--couleur-fond-alt);
+  border-radius: var(--rayon-bordure-lg);
+  padding: var(--espacement-md);
+  box-shadow: var(--ombre-card);
+  border-left: 5px solid var(--couleur-accent);
+  margin-bottom: var(--espacement-md);
+}
+
+.bio-bloc__icone {
+  font-size: 1.8rem;
+  margin-bottom: var(--espacement-xs);
+}
+
+.bio-bloc__titre {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--couleur-principale);
+  margin-bottom: var(--espacement-xs);
+}
+
+/* ==========================================
+   FORMULAIRE DE CONTACT
+   ========================================== */
+.contact-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contact-table-wrapper th {
+  text-align: left;
+  padding: 0.6rem 1rem 0.6rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--couleur-principale);
+  width: 140px;
+  vertical-align: top;
+  padding-top: 0.85rem;
+}
+
+.contact-table-wrapper td {
+  padding: 0.4rem 0;
+}
+
+.champ-formulaire {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid #dde3ea;
+  border-radius: var(--rayon-bordure);
+  font-family: var(--police-principale);
+  font-size: 0.95rem;
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond-alt);
+  transition: border-color var(--transition-rapide),
+              box-shadow var(--transition-rapide);
+  outline: none;
+}
+
+.champ-formulaire:focus {
+  border-color: var(--couleur-accent);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.18);
+}
+
+textarea.champ-formulaire {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.contact-coordonnees {
+  padding: var(--espacement-md);
+  background-color: var(--couleur-fond);
+  border-radius: var(--rayon-bordure-lg);
+}
+
+.coordonnee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: var(--espacement-sm);
+  font-size: 0.95rem;
+  color: var(--couleur-texte);
+}
+
+.coordonnee-item a {
+  color: var(--couleur-accent);
+  font-weight: 600;
+}
+
+.coordonnee-item a:hover {
+  color: var(--couleur-principale);
+}
+
+/* ==========================================
+   ANIMATIONS (transitions "transitoires")
+   ========================================== */
+@keyframes apparaitreHaut {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes apparaitre {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animer-apparition {
+  opacity: 0;
+  animation: apparaitre 0.7s ease forwards;
+}
+
+.animer-apparition:nth-child(1) { animation-delay: 0.1s; }
+.animer-apparition:nth-child(2) { animation-delay: 0.25s; }
+.animer-apparition:nth-child(3) { animation-delay: 0.4s; }
+
+/* Transition de page fade */
+.page-transition {
+  animation: apparaitre 0.5s ease both;
+}
